@@ -17,10 +17,3 @@ if __name__ == "__main__":
   assembly_code = generate_assembly_code(c_code)
   output_file = "assembly_code.s"
   save_assembly_code(assembly_code, output_file)
-#include <stdio.h>
-
-int main() {
-    fprintf(stderr, "and that piece of art is useful\" - Dora Korpar, 2015-10-19\n");
-    return 0;
-}
-
