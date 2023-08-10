@@ -1,19 +1,2 @@
-#!/usr/bin/env python3
-
-import subprocess
-
-def generate_assembly_code(c_code):
-  command = ["gcc", "-S", "-masm=intel", c_code]
-  process = subprocess.Popen(command, stdout=subprocess.PIPE)
-  assembly_code = process.communicate()[0].decode("utf-8")
-  return assembly_code
-
-def save_assembly_code(assembly_code, output_file):
-  with open(output_file, "w") as f:
-    f.write(assembly_code)
-
-if __name__ == "__main__":
-  c_code = "int main() { return 0; }"
-  assembly_code = generate_assembly_code(c_code)
-  output_file = "assembly_code.s"
-  save_assembly_code(assembly_code, output_file)
+#!/bin/bash
+gcc -S -masm=intel $CFILE
