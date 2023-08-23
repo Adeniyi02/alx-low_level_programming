@@ -1,60 +1,46 @@
-#include <stdio.h>
-#include <string.h>
+#include "main.h"
 
 /**
- * infinite_add - Add two numbers.
- * @n1: The first number as a string.
- * @n2: The second number as a string.
- * @r: The buffer to store the result.
- * @size_r: The size of the buffer.
- *
- * Return: A pointer to the result or 0 if the result cannot be stored.
+ * infinite_add - adds two numbers
+ * @n1: be the first number
+ * @n2: be the second number
+ * @r: give buffer for result
+ * @size_r: buffer size
+ * Return: address of r or 0
  */
 char *infinite_add(char *n1, char *n2, char *r, int size_r)
 {
-	int len1, len2, carry = 0, i, j = 0;
+	int i, j, k, l, m, n;
 
-	len1 = strlen(n1);
-	len2 = strlen(n2);
-
-	if (size_r <= len1 || size_r <= len2)
+	for (i = 0; n1[i]; i++)
+		;
+	for (j = 0; n2[j]; j++)
+		;
+	if (i > size_r || j > size_r)
 		return (0);
-
-	r[size_r - 1] = '\0';
-	i = size_r - 2;
-
-	while (len1 > 0 || len2 > 0 || carry)
+	m = 0;
+	for (i -= 1, j -= 1, k = 0; k < size_r - 1; i--, j--, k++)
 	{
-		int sum = carry;
-
-		if (len1 > 0)
-			sum += n1[--len1] - '0';
-
-		if (len2 > 0)
-			sum += n2[--len2] - '0';
-
-		carry = sum / 10;
-		r[i--] = (sum % 10) + '0';
+		n = m;
+		if (i >= 0)
+			n += n1[i] - '0';
+		if (j >= 0)
+			n += n2[j] - '0';
+		if (i < 0 && j < 0 && n == 0)
+		{
+			break;
+		}
+		m = n / 10;
+		r[k] = n % 10 + '0';
 	}
-
-	if (i < 0)
+	r[k] = '\0';
+	if (i >= 0 || j >= 0 || m)
 		return (0);
-
-	return (r + i + 1);
-}
-
-int main(void)
-{
-	char num1[] = "12345";
-	char num2[] = "9876";
-	int result_size = 10;
-	char result[result_size];
-
-	char *res = infinite_add(num1, num2, result, result_size);
-	if (res != 0)
-		printf("Result: %s\n", res);
-	else
-		printf("Result cannot be stored in the provided buffer.\n");
-
-	return (0);
+	for (k -= 1, l = 0; l < k; k--, l++)
+	{
+		m = r[k];
+		r[k] = r[l];
+		r[l] = m;
+	}
+	return (r);
 }
