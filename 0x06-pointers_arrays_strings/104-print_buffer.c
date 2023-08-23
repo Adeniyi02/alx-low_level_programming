@@ -42,10 +42,10 @@ void print_buffer(char *b, int size)
 			}
 			else
 			{
-				printf(" ");
+				putchar(" ");
 			}
 		}
 
-		printf("\n");
+		putchar("\n");
 	}
 }
