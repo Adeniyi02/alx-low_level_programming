@@ -1,39 +1,25 @@
-#include <unistd.h>
+#include "main.h"
 
 /**
- * _putchar - Write a character to stdout.
- * @c: The character to write.
- * Return: On success, the number of characters written.
- * On error, -1 is returned, and errno is set appropriately.
- */
-int _putchar(char c)
-{
-	return write(1, &c, 1);
-}
-
-/**
- * print_number - Print an integer.
- * @n: The integer to print.
- */
+  * print_number - Prints any integer with putchar
+  * @n: Number to prints
+  *
+  * Return: Nothing
+  */
 void print_number(int n)
 {
+	unsigned int x;
+
 	if (n < 0)
 	{
 		_putchar('-');
-		n = -n;
+		n *= -1;
 	}
 
-	if (n / 10)
-		print_number(n / 10);
+	x = n;
 
-	_putchar((n % 10) + '0');
-}
+	if (x / 10)
+		print_number(x / 10);
 
-int main(void)
-{
-	int num = -12345;
-	print_number(num);
-	_putchar('\n');
-
-	return (0);
+	_putchar(x % 10 + '0');
 }
