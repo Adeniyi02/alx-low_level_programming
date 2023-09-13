@@ -1,3 +1,12 @@
+#include "function_pointers.h"
+
+/**
+ * print_name - a function that prints a name.
+ * @name: the name given
+ * @f: function of name
+ *
+ * Rteurn: void
+ */
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -5,20 +14,10 @@
 void print_name(char *name, void (*f)(char *)) {
   f(name);
 }
+if (name != NULL && f != NULL)
 
-// Function to execute a function given as a parameter on each element of an array
-void array_iterator(int *array, size_t size, void (*action)(int)) {
-  for (size_t i = 0; i < size; i++) {
-    action(array[i]);
-  }
-}
+		f(name);
+}if (name != NULL && f != NULL)
 
-// Function to search for an integer
-int int_index(int *array, int size, int (*cmp)(int)) {
-  for (int i = 0; i < size; i++) {
-    if (cmp(array[i]) != 0) {
-      return i;
-    }
-  }
-  return -1;
+		f(name);
 }
