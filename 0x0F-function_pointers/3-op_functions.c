@@ -3,41 +3,73 @@
 #include <stdio.h>
 
 /**
-  * Function to perform simple operations 
   * op_add - ...
   * @a: ...
   * @b: ...
   *
   * Return: ...
   */
-
-int calc(int num1, char operator, int num2) {
-  int result;
-  switch (operator) {
-  case '+':
-    result = num1 + num2;
-    break;
-  case '-':
-    result = num1 - num2;
-    break;
-  case '*':
-    result = num1 * num2;
-    break;
-  case '/':
-    if (num2 == 0) {
-      exit(100);
-    }
-    result = num1 / num2;
-    break;
-  case '%':
-    if (num2 == 0) {
-      exit(100);
-    }
-    result = num1 % num2;
-    break;
-  default:
-    exit(99);
-  }
-  return result;
+int op_add(int a, int b)
+{
+	return (a + b);
 }
 
+/**
+  * op_sub - ...
+  * @a: ...
+  * @b: ...
+  *
+  * Return: ...
+  */
+int op_sub(int a, int b)
+{
+	return (a - b);
+}
+
+/**
+  * op_mul - ...
+  * @a: ...
+  * @b: ...
+  *
+  * Return: ...
+  */
+int op_mul(int a, int b)
+{
+	return (a * b);
+}
+
+/**
+  * op_div - ...
+  * @a: ...
+  * @b: ...
+  *
+  * Return: ...
+  */
+int op_div(int a, int b)
+{
+	if (b == 0)
+	{
+		printf("Error\n");
+		exit(100);
+	}
+
+	return (a / b);
+}
+
+/**
+  * op_mod - ...
+  * @a: ...
+  * @b: ...
+  *
+  * Return: ...
+  */
+int op_mod(int a, int b)
+{
+	if (b == 0)
+	{
+		printf("Error\n");
+		exit(100);
+	}
+
+	return (a % b);
+}
