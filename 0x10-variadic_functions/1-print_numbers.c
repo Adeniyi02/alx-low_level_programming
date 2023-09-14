@@ -1,7 +1,6 @@
 #include "variadic_functions.h"
 
 /**
- * function that prints numbers
  * print_numbers - prints numbers followed by a new line
  * @n: number of parameter
  * @separator: separator between two numbers
