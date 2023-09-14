@@ -4,7 +4,6 @@
  * function that returns the sum of all its parameters
  * sum_them_all - adds all the numbers
  * @n: the number of parameters passed
- *
  * Return: Always 0
  */
 

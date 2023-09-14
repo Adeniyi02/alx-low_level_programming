@@ -3,7 +3,6 @@
 /**function that prints anything 
  * print_all - Prints all of the arguments provided and specified
  * @format:assigned to specify the important operations
- *
  * Return: void
  */
 
