@@ -14,11 +14,9 @@ unsigned int binary_to_uint(const char *b)
 	unsigned int j;
 
 	j = 0;
-	// check for empty input.
 	if (!b){
 		return (0);
 	}	
-	// convert the binary string to an unsigned int using a bit shift and mask operation.
 	for (i = 0; b[i] != '\0'; i++)
 	{
 		if (b[i] != '0' && b[i] != '1')
