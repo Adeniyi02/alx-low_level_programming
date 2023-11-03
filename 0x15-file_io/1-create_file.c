@@ -1,5 +1,4 @@
-#include <stdlib.h>
-#include <fcntl.h>
+#include "main.h"
 
 /**
  * create_file - creates an array of chars, and initializes

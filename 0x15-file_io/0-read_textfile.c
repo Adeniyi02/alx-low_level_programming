@@ -1,10 +1,10 @@
 /*
  * File: read_textfile.c
- * Auth: Bard, a large language model from Google AI.
+ * Author: Ade02
  */
+#include "main.h"
 #include <stdlib.h>
-#include <stdio.h>
-#include <fcntl.h>
+
 
 /**
  * read_textfile - Reads a text file and prints it to POSIX stdout.

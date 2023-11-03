@@ -1,7 +1,6 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include <fcntl.h>
-#include <unistd.h>
 
 /**
  * copy_file - Copies the content of a file to another file.
